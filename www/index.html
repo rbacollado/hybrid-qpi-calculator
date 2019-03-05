@@ -1,69 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <link rel="stylesheet" href="css/onsenui.css">
+  <link rel="stylesheet" href="css/onsen-css-components.min.css">
+  
 </head>
 <body>
     <ons-page>
         <ons-toolbar>
-          <div class="center">Simple Unit Converter</div>
-        </ons-toolbar>
+            <div class ="center">Simple Unit Converter</div>
+          </ons-toolbar>
 
         <ons-card>
+          <div class="content" align = "center">
+            <label class="radio-button radio-button--material">
+                <input type="radio" class="radio-button__input radio-button--material__input" value = "time" name="r" id = "time">
+                <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                Time
+              </label>
 
-          <div align = "left">
-            <input type="text" width="50px" class="text-input text-input--underbar" placeholder="From" value=""> 
+              <label class="radio-button radio-button--material">
+                <input type="radio" class="radio-button__input radio-button--material__input" value = "length" name="r" id = "length"> 
+                <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                Length
+              </label>
 
-            <ons-select align = "">
-                <option value="basic">1</option>
-                <option value="material">2</option>
-                <option value="underbar">3</option>
-            </ons-select>
-
+              <label class="radio-button radio-button--material">
+                  <input type="radio" class="radio-button__input radio-button--material__input" value = "mass" name="r" id = "mass">
+                  <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                  Mass
+              </label>
           </div>
-          
-          <div align = "left">
-            <input type="text"  class="text-input text-input--underbar" placeholder="To" value="">
-
-            <ons-select align = "">
-                <option value="basic">1</option>
-                <option value="material">2</option>
-                <option value="underbar">3</option>
-            </ons-select>
-              
-
-          </div>
-
         </ons-card>
 
         <ons-card>
-            <div class="content" align = "center">
-                <label class="radio-button radio-button--material">
-                    <input type="radio" class="radio-button__input radio-button--material__input" name="r" checked="checked">
-                    <div class="radio-button__checkmark radio-button--material__checkmark"></div>
-                    Time
-                  </label>
+          <div align = "center">
+            <input type="text" style= "width: 150px " class="text-input text-input--material" placeholder="From" name = "fromValue"> 
+            
+            <ons-select style= "width: auto" name = "unit" >
+              <select  class="select-input" id = "unit">
 
-                  <label class="radio-button radio-button--material">
-                    <input type="radio" class="radio-button__input radio-button--material__input" name="r">
-                    <div class="radio-button__checkmark radio-button--material__checkmark"></div>
-                    Length
-                  </label>
+              </select>
+            </ons-select>
 
-                  <label class="radio-button radio-button--material">
-                      <input type="radio" class="radio-button__input radio-button--material__input" name="r">
-                      <div class="radio-button__checkmark radio-button--material__checkmark"></div>
-                      Mass
-                  </label>
-            </div>
+            <h1>To:</h1>
+            <ons-select style= "width: auto" name = "unit2">
+                <select class="select-input" id = "unit2">
+
+                </select>
+            </ons-select>
+
+          </div>
+        </br>
+          <div class="block">
+            <button class="button--large--cta" style="width: 50%; margin: 0 auto;" id = "convertBtn" >Convert</button>
+          </div>
+        </ons-card>
+
+        <ons-card>
+          <div align = "center" class="title" >
+            Result: <span id = "result"> </span>
+          </div>
         </ons-card>
 
 
-      
-       
       </ons-page>
 
+    <script src="js/jquery.js"></script>
+    <script src="js/onsenui.min.js"></script>
+    <script src="js/index.js"></script>
+   
+    
 </body>
 </html>
