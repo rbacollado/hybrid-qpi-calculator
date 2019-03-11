@@ -97,6 +97,132 @@ $("input[type='radio'][name = 'r']").change(function(){
         $("#unit2").append("<option value = '" + v.val + "'>" + v.name + "</option>");
     });
 
+    $("#unit").change(function()
+    {
+        //length
+        if($("#unit").val() =="km")
+        {
+            var option = [
+                {name:"meter", val:"m"},
+                {name:"foot", val:"ft"},
+                {name:"inch", val:"inch"}
+            ];
+           
+        }
+        else if($("#unit").val() =="m")
+        {
+            var option = [
+                {name:"kilometer", val:"km"},
+                {name:"foot", val:"ft"},
+                {name:"inch", val:"inch"}
+            ];
+           
+        }
+        else if($("#unit").val() =="ft")
+        {
+            var option = [
+                {name:"meter", val:"m"},
+                {name:"kilometer", val:"km"},
+                {name:"inch", val:"inch"}
+            ];
+           
+        }
+        else if($("#unit").val() =="inch")
+        {
+            var option = [
+                {name:"meter", val:"m"},
+                {name:"kilometer", val:"km"},
+                {name:"foot", val:"ft"}
+            ];
+           
+        }
+        $("#unit2").empty();
+
+        $.each(option, function(k, v){
+    
+            $("#unit2").append("<option value = '" + v.val + "'>" + v.name + "</option>");
+        });
+
+        //mass
+        if($("#unit").val() == "g")
+        {
+            var option = [
+                {name:"kilogram", val:"kg"},
+                {name:"pound", val:"lb"},
+                {name:"ounce", val:"oz"}
+            ];
+        }
+        else if($("#unit").val() == "kg")
+        {
+            var option = [
+                {name:"gram", val:"g"},
+                {name:"pound", val:"lb"},
+                {name:"ounce", val:"oz"}
+            ];
+        }
+        else if($("#unit").val() == "lb")
+        {
+            var option = [
+                {name:"gram", val:"g"},
+                {name:"kilogram", val:"kg"},
+                {name:"ounce", val:"oz"}
+            ];
+        }
+        else if($("#unit").val() == "oz")
+        {
+            var option = [
+                {name:"gram", val:"g"},
+                {name:"kilogram", val:"kg"},
+                {name:"pound", val:"lb"}
+            ];
+        }
+        $("#unit2").empty();
+
+        $.each(option, function(k, v){
+    
+            $("#unit2").append("<option value = '" + v.val + "'>" + v.name + "</option>");
+        });
+        
+        //time
+        if($("#unit").val() == "sec")
+        {
+           var option = [
+            {name:"minutes", val:"min"},
+            {name:"hours", val:"hr"},
+            {name:"days", val:"days"}
+            ];
+        }
+        else if($("#unit").val() == "min")
+        {
+            var option = [
+                {name:"seconds", val:"sec"},
+                {name:"hours", val:"hr"},
+                {name:"days", val:"days"}
+            ];
+        }
+        else if($("#unit").val() == "hr")
+        {
+            var option = [
+                {name:"seconds", val:"sec"},
+                {name:"minutes", val:"min"},
+                {name:"days", val:"days"}
+            ];
+        }
+        else if($("#unit").val() == "days")
+        {
+            var option = [
+                {name:"seconds", val:"sec"},
+                {name:"minutes", val:"min"},
+                {name:"hours", val:"hr"}
+            ];
+        }
+        $("#unit2").empty();
+
+        $.each(option, function(k, v){
+    
+            $("#unit2").append("<option value = '" + v.val + "'>" + v.name + "</option>");
+        });
+    });
 
 });
 
@@ -128,21 +254,21 @@ $("#convertBtn").click(function(){
         if(toUnit2 == "m" )
         {
             var answer = toConvert / 3.2808;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "km" )
         {
             var answer = toConvert / 3280.8;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "inch" )
         {
             var answer = toConvert / 12;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
     }
@@ -152,21 +278,21 @@ $("#convertBtn").click(function(){
         if(toUnit2 == "ft" )
         {
             var answer = toConvert * 3.2808;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "km" )
         {
             var answer = toConvert / 1000;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "inch" )
         {
             var answer = toConvert * 39.370;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
     }
@@ -176,21 +302,21 @@ $("#convertBtn").click(function(){
         if(toUnit2 == "ft" )
         {
             var answer = toConvert * 0.083333;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "km" )
         {
             var answer = toConvert / 39370;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "m" )
         {
             var answer = toConvert / 39.370;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
     }
@@ -200,21 +326,21 @@ $("#convertBtn").click(function(){
         if(toUnit2 == "ft" )
         {
             var answer = toConvert * 3280.8;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "inch" )
         {
             var answer = toConvert * 39370;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "m" )
         {
             var answer = toConvert * 1000;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
     }
@@ -225,21 +351,21 @@ $("#convertBtn").click(function(){
         if(toUnit2 == "kg" )
         {
             var answer = toConvert / 1000;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "lb" )
         {
             var answer = toConvert *0.0022046;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "oz" )
         {
             var answer = toConvert *0.035274;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
     }
@@ -249,21 +375,21 @@ $("#convertBtn").click(function(){
         if(toUnit2 == "kg" )
         {
             var answer = toConvert /2.2046;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "g" )
         {
             var answer = toConvert /0.0022046;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "oz" )
         {
             var answer = toConvert *16;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
     }
@@ -272,21 +398,21 @@ $("#convertBtn").click(function(){
         if(toUnit2 == "lb" )
         {
             var answer = toConvert*2.2046;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "g" )
         {
             var answer = toConvert /0.0022046;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "oz" )
         {
             var answer = toConvert*35.274;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
     }
@@ -296,21 +422,21 @@ $("#convertBtn").click(function(){
         if(toUnit2 == "lb" )
         {
             var answer = toConvert*0.0625;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "g" )
         {
             var answer = toConvert/0.035274;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "kg" )
         {
             var answer = toConvert/35.274;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
     }
@@ -321,21 +447,21 @@ $("#convertBtn").click(function(){
         if(toUnit2 == "hr" )
         {
             var answer = toConvert/3600;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "min" )
         {
             var answer = toConvert/60;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "days" )
         {
             var answer = toConvert/86400;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
     }
@@ -345,21 +471,21 @@ $("#convertBtn").click(function(){
         if(toUnit2 == "sec" )
         {
             var answer = toConvert*3600;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "min" )
         {
             var answer = toConvert*60;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "days" )
         {
             var answer = toConvert/24;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
     }
@@ -369,21 +495,21 @@ $("#convertBtn").click(function(){
         if(toUnit2 == "hr" )
         {
             var answer = toConvert/60;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "sec" )
         {
             var answer = toConvert*60;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "days" )
         {
             var answer = toConvert/1440;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
     }
@@ -393,31 +519,24 @@ $("#convertBtn").click(function(){
         if(toUnit2 == "hr" )
         {
             var answer = toConvert * 24;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "sec" )
         {
             var answer = toConvert*86400;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
 
         if(toUnit2 == "min" )
         {
             var answer = toConvert*1440;
-            $("#result").text(answer);
+            $("#result").text(answer + " "+ toUnit2);
             console.log(answer);
         }
     }
-
-
-
-
-
-
-
 });
 
 
